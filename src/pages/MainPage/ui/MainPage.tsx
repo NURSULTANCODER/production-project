@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-function MainPage() {
+const MainPage: FC = () => {
   return (
     <div>
       Main Page
