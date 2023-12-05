@@ -6,18 +6,19 @@ import { Suspense } from "react"
 import { classNames } from "shared/lib/classNames"
 import { useTheme } from "app/providers/ThemeProvider"
 import { AppRouter } from "./providers/router"
+import { Navbar } from "widgets/Navbar"
+import { Sidebar } from "widgets/Sidebar"
 
 const App = () => {
-  const {theme, toggleTheme} = useTheme()
+  const {theme} = useTheme()
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <button onClick={toggleTheme}>Change color</button>
-      <br />
-      <Link to={'/'}>Main</Link> 
-      <br />
-      <Link to={'/about'}>About</Link>
-      <AppRouter />
+      <Navbar />
+      <div className="content-page">
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   )
 }
