@@ -23,6 +23,6 @@ export function buildWebpackConfig(options: buildOptions): webpack.Configuration
       filename: '[name].[contenthash].js',
       clean: true
     },
-    plugins: buildPlugins(html)
+    plugins: buildPlugins(options)
   }
 }
